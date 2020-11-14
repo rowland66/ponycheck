@@ -1259,7 +1259,7 @@ primitive Generators
     with a minimum length of ``min`` (default: 0)
     and a maximum length of ``max`` (default: 100).
     """
-    let range_bytes = range.apply()
+    let range_bytes = range.apply().array()
     let fallback = U8(0)
     let range_bytes_gen = usize(0, range_bytes.size()-1)
       .map[U8]({(size) =>
@@ -1427,4 +1427,3 @@ primitive Generators
         (range_2_size, range_2)
       ])
     utf32_codepoint_string(code_point_gen, min, max)
-
